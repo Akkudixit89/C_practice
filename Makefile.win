@@ -1,0 +1,43 @@
+# Project: bulbul codes
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = "bulbul\ codes/1.o" 2.o 3.o "bullu\ codes/armstrong.o" pra.o "bullu\ codes/perfect\ number.o"
+LINKOBJ  = "bulbul codes/1.o" 2.o 3.o "bullu codes/armstrong.o" pra.o "bullu codes/perfect number.o"
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = "bullu 1.exe"
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+"bulbul\ codes/1.o": bulbul\ codes/1.c
+	$(CC) -c "bulbul codes/1.c" -o "bulbul codes/1.o" $(CFLAGS)
+
+2.o: 2.c
+	$(CC) -c 2.c -o 2.o $(CFLAGS)
+
+3.o: 3.c
+	$(CC) -c 3.c -o 3.o $(CFLAGS)
+
+"bullu\ codes/armstrong.o": bullu\ codes/armstrong.c
+	$(CC) -c "bullu codes/armstrong.c" -o "bullu codes/armstrong.o" $(CFLAGS)
+
+pra.o: pra.c
+	$(CC) -c pra.c -o pra.o $(CFLAGS)
+
+"bullu\ codes/perfect\ number.o": bullu\ codes/perfect\ number.c
+	$(CC) -c "bullu codes/perfect number.c" -o "bullu codes/perfect number.o" $(CFLAGS)
